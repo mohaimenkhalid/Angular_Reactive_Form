@@ -11,5 +11,10 @@ export class AppComponent {
       username: new FormControl('Mohaimen'),
       password: new FormControl(''),
       confirm_password: new FormControl(''),
+      address: new FormGroup({
+          city: new FormControl(''),
+          state: new FormControl(''),
+          postal_code: new FormControl(''),
+        })
   });
 }
