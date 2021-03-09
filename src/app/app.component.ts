@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   registrationForm = new FormGroup({
-      username: new FormControl('Mohaimen'),
+      username: new FormControl(''),
       password: new FormControl(''),
       confirm_password: new FormControl(''),
       address: new FormGroup({
@@ -17,4 +17,17 @@ export class AppComponent {
           postal_code: new FormControl(''),
         })
   });
+
+  loadApiButton() {
+     this.registrationForm.patchValue({
+       username: 'mohaimen',
+       password: 'test',
+       confirm_password: 'test',
+       address: {
+         city: 'Dhaka',
+         state: 'Dhaka',
+         postal_code: '123456',
+       }
+     });
+  }
 }
